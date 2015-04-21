@@ -13,7 +13,7 @@ import javax.inject.Singleton;
 public class LogicModule {
     @Provides
     @Singleton
-    DemoManager provideGitHubService(ContributorDao dao) {
-        return new DemoManager(dao);
+    GitHubManager provideGitHubService(ContributorDao dao) {
+        return new GitHubManager(dao);
     }
 }

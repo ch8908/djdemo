@@ -8,10 +8,10 @@ import java.util.List;
 /**
  * Created by Kros on 4/21/15.
  */
-public class DemoManager {
+public class GitHubManager {
     private final ContributorDao dao;
 
-    public DemoManager(ContributorDao dao) {
+    public GitHubManager(ContributorDao dao) {
         this.dao = dao;
     }
 

@@ -20,7 +20,7 @@ public class MainFragment extends BaseFragment {
     }
 
     @Inject GitHubService gitHubService;
-    @Inject DemoManager demoManager;
+    @Inject GitHubManager demoManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
