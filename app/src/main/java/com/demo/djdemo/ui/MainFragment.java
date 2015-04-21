@@ -1,15 +1,10 @@
 package com.demo.djdemo.ui;
 
-import android.app.Fragment;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.demo.djdemo.BaseFragment;
-import com.demo.djdemo.DemoApplication;
-import com.demo.djdemo.GitHubService;
-import com.demo.djdemo.R;
+import com.demo.djdemo.*;
 import com.demo.djdemo.model.Contributor;
 
 import javax.inject.Inject;
@@ -25,6 +20,7 @@ public class MainFragment extends BaseFragment {
     }
 
     @Inject GitHubService gitHubService;
+    @Inject DemoManager demoManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +38,7 @@ public class MainFragment extends BaseFragment {
             @Override
             public void run() {
                 List<Contributor> contributors = gitHubService.contributors("square", "retrofit");
-                System.out.println(">>>>>>>>>>>>>>>>>>> contributors = " + contributors);
+                demoManager.saveContributors(contributors);
             }
         });
         return rootView;

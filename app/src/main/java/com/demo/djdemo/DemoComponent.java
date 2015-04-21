@@ -9,7 +9,7 @@ import javax.inject.Singleton;
  * Created by Kros on 4/21/15.
  */
 @Singleton
-@Component(modules = NetworkModule.class)
+@Component(modules = {NetworkModule.class, LogicModule.class, DaoModule.class})
 public interface DemoComponent {
     void inject(BaseActivity activity);
 

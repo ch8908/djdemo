@@ -11,7 +11,10 @@ public class DemoApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        demoComponent = DaggerDemoComponent.builder().networkModule(new NetworkModule("https://api.github.com")).build();
+        demoComponent = DaggerDemoComponent.builder()
+                .networkModule(new NetworkModule("https://api.github.com"))
+                .daoModule(new DaoModule(this))
+                .build();
     }
 
     public static DemoComponent component() {
